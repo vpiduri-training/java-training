@@ -1,5 +1,3 @@
-package com.training.java.basics;
-
 public class BasicsDemoSopikzu {
 
 	static void print() {
