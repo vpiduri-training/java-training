@@ -1,5 +1,4 @@
 class BasicsDemoRobertZizo {
-  // Adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/J1a_Introduction.html
   static void print() {
     System.out.println("\n\nInside print..."); // \n for new line
     System.out.println("Hello, world"); // Advance cursor to beginning of next line
@@ -16,7 +15,8 @@ class BasicsDemoRobertZizo {
     System.out.print(" ");                // Print a space
     System.out.print("is it me you're looking for?");
     System.out.println();                 // Print empty line
-    System.out.println("                             ;\\ \r\n" + 
+    System.out.println(
+    		"                             ;\\ \r\n" + 
     		"                            |' \\ \r\n" + 
     		"         _                  ; : ; \r\n" + 
     		"        / `-.              /: : | \r\n" + 
@@ -42,7 +42,6 @@ class BasicsDemoRobertZizo {
   }
   
   public static void main(String[] args) {	
-	   	// Language Basics 1
 		print();				
   }       
 }
