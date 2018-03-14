@@ -6,7 +6,7 @@ public class BasicDemoIntEgression {
 	static void primitiveints() {
 		  System.out.println("Working ...");
 		  int intBase =  68; //base number set to 68, input from keyboard
-		  int intHex = 0x0044; //defining ineger using it's hexadecimal equivalent
+		  int intHex = 0x0044; //defining integer using it's hexadecimal equivalent
 		  System.out.println("Hexadecimal: " + intHex + "= 0x0044"); //prints intHex as integer, and prints its actual value in plain text.
 		  int intBinary = 0b01000100; // defining integer using it's binary equivalent
 		  System.out.println("Binary: " + intBinary + " = 0b01000100"); //prints intBinary as integer, and prints its actual value in plain text
