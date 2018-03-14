@@ -1,4 +1,3 @@
-package com.training.homework1;
 
 public class BasicDemoEgression {
 

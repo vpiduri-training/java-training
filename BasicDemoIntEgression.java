@@ -1,6 +1,4 @@
 
-package com.training.homework1;
-
 public class BasicDemoIntEgression {
 
 	static void primitiveints() {
