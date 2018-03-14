@@ -1,8 +1,8 @@
 	  class BasicsDemoInt {
 		    // Adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/J1a_Introduction.html
-		    }
+		    
 
-			static void primitives() {
+	           static void primitives() {
 			  int intHex = 0x0043;
 			  System.out.println("intHex: " + intHex);
 			  int intBinary = 0b1000011;
