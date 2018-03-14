@@ -15,7 +15,8 @@ class BasicsDemoRobertZizo {
     System.out.print(" ");                // Print a space
     System.out.print("is it me you're looking for?");
     System.out.println();                 // Print empty line
-    System.out.println("                             ;\\ \r\n" + 
+    System.out.println(
+    		"                             ;\\ \r\n" + 
     		"                            |' \\ \r\n" + 
     		"         _                  ; : ; \r\n" + 
     		"        / `-.              /: : | \r\n" + 
