@@ -1,8 +1,6 @@
 class StudentTestEgression {
 	
 	public static void main(String[] args) {
-		// Initializing student variables inside of the main method for quick understanding of variables within this class
-
 		
 		//Testing code, line 10 for a filled array, line 11 for a null array.
 		//int[] studentIds = new int[] { 1001, 1002, 1003 };
