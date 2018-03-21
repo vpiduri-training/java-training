@@ -2,7 +2,7 @@
 public class FizzBuzzSopikzu {
 
 	public static void main(String[] args) {
-		// Making an Array of 1 million length.
+		// Making an array with length of 100.
 		int[] myArray = new int[100];
 		/*
 		 *  Starting the logic loop to make many iterations of increasing increment
