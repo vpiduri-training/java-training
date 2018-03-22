@@ -31,21 +31,22 @@ class StudentTestSopikzu {
 
 		System.out.println("Name of student2: " + student2.name);
 		// This next section is a if condition that states if student3 is not equal to null, than go ahead and print it out.
-		if (student3 != null) {
 		System.out.println("Name of student3: " + student3.name);
-		}
+		
 		// Update student1's name from joan to john by invoking updateProfile method
 		student1.updateProfile("john");
 		System.out.println("Updated name of student1: " + student1.name);
 	}
 
 	public static void main(String[] args) {
-		int[] studentIds = new int[] { 1001, 1002, 1003 };
-		// int[] studentIds = null;
+		// int[] studentIds = new int[] { 1001, 1002, 1003 };
+		 int[] studentIds = null;
 		// This next line puts an If condition on our method entirely stating that if the Id
 		// Array is not null, than invoke the updateReferences method.
 		if (studentIds != null) {
 			updateReferences(studentIds);
+		} else {
+			System.out.println("Array has no values.");
 		}
 	}
 
