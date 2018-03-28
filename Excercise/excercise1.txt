@@ -1,0 +1,36 @@
+
+Computing GPA ~ Putting Operators & Control-flow to Test
+
+In this simple exercise, you will put some of the operators & control-flow statements we learned into use. for-loop will also be required for this exercise and where possible try to use for-each instead of traditional for statement. A Java file called StudentUtil has been provided, which includes two static methods calculateGPA & getStudentsByGPA. Your goal is two fill these two methods. Below is what these methods do:
+
+double[] calculateGPA(int[] studentIdList, char[][] studentsGrades):
+
+In many Universities across the World, common way to judge a student's performance in a semester or even for the entire program is through GPA (Grade Point Average). GPA of a student is computed by taking an average of the grades received for the courses taken by the student. For this exercise, we can have only 3 grades: A, B, C. Grades A, B, and C correspond to the points 4, 3, and 2 respectively. So, let's say if a student has received the grades A, A, A, and B for 4 courses taken in a semester, then his/her GPA would be (4 + 4 + 4 + 3) / 4 = 3.75, i.e., points corresponding to the grades are taken to compute the average. This method takes two parameters studentIdList (1D array) & studentsGrades (2D array) and returns a 1D array containing GPAs. Here is a sample input & output:
+
+Input:
+
+studentIdList = {1001, 1002} ~ Includes students IDs
+
+studentsGrades = { { 'A', 'A', 'A', 'B' }, { 'A', 'B', 'B' } } ~ Each element in this 2D array corresponds to grades of the above students, i.e., {'A', 'A', 'A', 'B' } corresponds to grades received for 4 courses by student with ID 1001 and {'A', 'A', 'B'} corresponds to grades received for 3 courses by student with ID 1002
+
+output = {3.75, 3.3333} ~ 3.75 here corresponds to GPA of student with ID 1001
+
+So, input array studentsGrades includes grades as characters and you need to use the corresponding int points (2, 3, 4). Also, note that each element in studentsGrades can be of varying lengths. For example in the above sample data, first element has 4 grades while second has 3 grades. Note that the above data is ONLY sample data to explain the problem, i.e., method parameters studentIdList & studentsGrades can be invoked with any such data.
+
+int[] getStudentsByGPA(double lower, double higher, int[] studentIdList, char[][] studentsGrades):
+
+This method returns students (array) whose GPA is in the range lower & higher, i.e., lower <= GPA <= higher. studentIdList & studentsGrades are same as in calculateGPA method. Since GPA needs to be calculated here, you should use the calculateGPA method. Here is a sample input & output:
+
+lower = 3.2
+
+higher = 3.5
+
+studentIdList = {1001, 1002}
+
+studentsGrades = { { 'A', 'A', 'A', 'B' }, { 'A', 'B', 'B' } }
+
+output: {1002} 
+
+Note that the returned array can have a size different from size of studentIdList as in the above example where the returned array has only one element 1002
+
+Also, if lower or higher is a negative number or if lower > higher, then the method should return a null. Such a check on method parameters is referred to as parameter validation as it is ensuring that the values that the parameter get assigned are valid and if not a null is returned. Add this parameter validation logic at the beginning of the method. Note that lower & higher can be equal too.
