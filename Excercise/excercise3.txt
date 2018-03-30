@@ -1,0 +1,48 @@
+
+Parsing API Response ~ Let's make use of Boxed Primitives & String class
+This is a simple exercise where you will use boxed primitive classes Integer & Double along with String class. You will be implementing simple logic to parse required data from a piece of text, which is in XML format. The data to be parsed can be considered as a response returned by a Web service (REST API) on submitting some request. Below is a sample real XML response returned by the REST API provided by a Website called goodreads (www.goodreads.com), which is a database of books and can be used for bookmarking, writing reviews on books etc. You would be parsing the below XML response.
+
+Ideally, an XML parsing library like JDOM (jdom.org) would be used for parsing XML. Since this course is not about XML, we parse using String class. In case you are not familiar with XML, it is simply a data exchange format where you have data enclosed in XML tags called elements. For instance, in the below XML, title of the book is expressed as <title>Walden</title> where Walden is the title of the book while <title> & </title> are XML tags indicating start and end of title. So, the XML tags meaningfully describe the data they are encapsulating. In this exercise, you will be parsing 6 fields from the below XML string. The 6 fields are title, author name, publication year, average rating, ratings count and image url. Ratings count is nothing but the total number of ratings that the book has.
+
+To extract the title 'Walden', all you need to do is search for the preceding and succeeding tags <title> & </title> in the XML string and extract 'Walden'. Below are the tags you would use for the rest of the fields.
+
+Author name: <name> & </name>
+
+Publication year: <original_publication_year type="integer"> & </original_publication_year>
+
+Average rating: <average_rating> & </average_rating>
+
+Ratings Count: <ratings_count type="integer"> & <ratings_count> 
+
+Image url: <image_url> & </image_url> 
+
+In fact, succeeding tag for all fields can be simply "<" too. Below, we discuss more about the provided classes and what you will be implementing.
+
+<work>
+     <id type="integer">2361393</id>
+     <books_count type="integer">813</books_count>
+     <ratings_count type="integer">1,16,315</ratings_count>
+     <text_reviews_count type="integer">3439</text_reviews_count>
+     <original_publication_year type="integer">1854</original_publication_year>
+     <original_publication_month type="integer" nil="true"/>
+     <original_publication_day type="integer" nil="true"/>
+     <average_rating>3.79</average_rating>
+     <best_book type="Book"> 
+         <id type="integer">16902</id> 
+         <title>Walden</title>
+         <author> 
+            <id type="integer">10264</id> 
+            <name>Henry David Thoreau</name> 
+        </author>
+        <image_url>http://images.gr-assets.com/books/1465675526m/16902.jpg</image_url>
+        <small_image_url>http://images.gr-assets.com/books/1465675526s/16902.jpg</small_image_url>
+      </best_book> 
+</work>
+2 classes are provided for this exercise: APIResponseParser.java & Book,java. APIResponseParser as the name suggests is used for parsing API response. It has one public method parse that takes the XML string as input and returns an instance of Book. Some template code is provided for parsing 'title' and you can do the same for all other fields to be extracted. In the template code, the variables startRule & endRule are simply the preceding & succeeding tags that we discussed above. The actual extraction logic should be implemented in another private overloaded method parse and it would be pretty simple logic. You can see in the provided code that we are invoking the private parse method. Once the required data is extracted it needs to be then set in the Book instance. For instance, you can see that once we extracted title, we are invoking setTitle method on book instance. 
+
+The Book class has 6 private fields whose values need to be set via getters & setters from the parse method. Getters & setters are provided for three of the fields and for the rest you can complete. Do follow the proper naming conventions for getters & setters. For instance, you can see that for the field publicationYear, getter is named as getPublicationYear ('p' in publication is capitalized) and setter is named as setPublicationYear. 
+
+Since the private method parse would return a String, you would have to do appropriate data type conversions (by using boxed primitives) for some of the fields as required in Book class, e.g., int for publication year. Note that ratings count can include commas as in the case of above XML in which case you would have to strip them before doing the conversion, i.e., 1,16,315 in the above example is just one number 116315. Finally, you would return the Book instance. In the APIResponseParser class, main method is provided, which invokes the parse method with the above sample XML string. As usual your solution would be auto-evaluated by a Junit script, which would also pass an XML string similar to the above ~ only data would change and all the tags would be same.
+
+Bonus: As a bonus, you can also implement another overloaded private parse method, which would take a String[] instead of String for startRule. This would enables us to pass multiple tags for startRule. For e.g., to extract author name from the above XML, we could pass new String[] {"<author>", "<name>"}. With this you would first use <author> to scan till <author> and then you can use <name> to reach the beginning of 'author name'. endRule would still be string. So, the logic would simply use a string array for start rule as you may deal with more than one tag and it would be a very simple extension. If time permits, you could implement this method too and use it instead of other private parse method. The data returned would still be the same. This parse method would be more useful as sometimes a single start tag may not help us reach the beginning of the data to be extracted. 
+
